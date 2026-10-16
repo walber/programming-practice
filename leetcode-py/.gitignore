@@ -4,7 +4,9 @@ __pycache__/
 *$py.class
 
 # Distribution / packaging
+CACHEDIR.TAG
 .Python
+bin/
 build/
 develop-eggs/
 dist/
@@ -12,6 +14,7 @@ downloads/
 eggs/
 .eggs/
 lib/
+lib64
 lib64/
 parts/
 sdist/
@@ -46,8 +49,12 @@ cover/
 profile_default/
 ipython_config.py
 
+# venv
+pyvenv.cfg
+
 # uv
 uv.lock
+.lock
 
 # Ruff stuff:
 .ruff_cache/
