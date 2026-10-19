@@ -12,9 +12,9 @@ class Solution:
             complement = target - n
             i = complement_dict.get(n)
 
-            if i is None:
-                complement_dict[complement] = j
-            else:
+            if i is not None:
                 return [i, j]
+                
+            complement_dict[complement] = j
         
         return []
