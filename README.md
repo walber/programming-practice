@@ -6,6 +6,19 @@ A Python package to generate professional LeetCode practice environments.
 pip install leetcode-py-sdk
 ```
 
+## Simple setup
+```bash
+uv venv leetcode-folder
+cd leetcode-folder
+lcpy gen -n 1
+```
+
+## Testing
+```bash
+cd leetcode-folder
+uv run python -m pytest two_sum/test_solution.py
+```
+
 ## List all problems
 ```bash
 lcpy list
