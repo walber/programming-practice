@@ -6,6 +6,18 @@ A Python package to generate professional LeetCode practice environments.
 pip install leetcode-py-sdk
 ```
 
+## Install UV
+An extremely fast Python package and project manager, written in Rust.
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+### Or
+```bash
+pip install uv
+```
+
 ## Simple setup
 ```bash
 uv venv leetcode-folder
