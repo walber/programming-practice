@@ -15,7 +15,7 @@ class TestLongestSubstringWithoutRepeatingCharacters:
         [
             ("abcabcbb", 3),
             ("bbbbb", 1),
-            ("pwwkew", 4),
+            ("pwwkew", 3),
             ("", 0),
             ("a", 1),
             ("au", 2),
