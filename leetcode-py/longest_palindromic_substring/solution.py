@@ -7,12 +7,13 @@ class Solution:
         if s_len <= 2:
             return s if s[0] == s[-1] else s[0]
 
-        best_l = 0
-        best_r = 0
-        best_len = 0
+        best_l, best_r, best_len = 0, 0, 0
 
         for k in range(s_len):
-            for l, r in ((k, k), (k, k + 1)): 
+            for c in (0, 1): 
+                l = k
+                r = k + c
+
                 while l >= 0 and r < s_len and s[l] == s[r]:
                     p_len = r - l + 1
     
