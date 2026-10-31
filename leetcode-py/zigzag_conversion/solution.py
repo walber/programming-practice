@@ -1,18 +1,19 @@
-import math
-
 class Solution:
     # Time: O(n)
     # Space: O(n)
     def convert(self, s: str, num_rows: int) -> str:
+        if num_rows == 1:
+            return s
+        
         res = []
         s_len = len(s)
         row_bound = num_rows - 1
-        period = max(2 * row_bound, 1)
-        num_cols = math.ceil(s_len / num_rows)
+        col_offset = 2 * row_bound
+        num_cols = (s_len // num_rows) + 1
         
         for row in range(num_rows):
             for col in range(num_cols):
-                c0 = col * period
+                c0 = col * col_offset
                 c1 = c0 - row
                 c2 = c0 + row
 
