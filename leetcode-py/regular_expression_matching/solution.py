@@ -14,7 +14,7 @@ class Solution:
         for i, s_char in enumerate(s, 1):
             for j, p_char in enumerate(p, 1):
                 if p_char == '*':
-                    if i > 1 and j > 1 and (s[i - 1] == s[i - 2] or p[j - 2] == '.'):
+                    if (i > 1 and s_char == s[i - 2]) or (j > 1 and p[j - 2] == '.'):
                         dp_table[i][j] = dp_table[i - 1][j]
                     
                     dp_table[i][j] = dp_table[i][j] or dp_table[i][j - 1]
