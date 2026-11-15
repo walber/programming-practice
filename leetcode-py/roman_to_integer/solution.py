@@ -28,11 +28,13 @@ class Solution:
             i += 1
 
         while i < s_len:
-            if self.ROMAN_SYN.get(s[i:i + 2]) is not None:
-                res += self.ROMAN_SYN.get(s[i:i + 2])
+            symbol = s[i:i + 2]
+            
+            if symbol in self.ROMAN_SYN:
+                res += self.ROMAN_SYN[symbol]
                 i += 1
             else:
-                res += self.ROMAN_SYN.get(s[i])
+                res += self.ROMAN_SYN[s[i]]
             
             i += 1
 
