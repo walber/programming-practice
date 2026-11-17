@@ -19,10 +19,10 @@ class Solution:
     } 
     
     def int_to_roman(self, num: int) -> str:
-        symbols = []
         n = num // 1000
         res = num % 1000
 
+        symbols = []
         symbols.append('M' * n)
 
         for v in (100, 10, 1):
