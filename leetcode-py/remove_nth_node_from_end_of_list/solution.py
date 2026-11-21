@@ -8,17 +8,20 @@ class Solution:
         self, head: ListNode[int] | None, n: int
     ) -> ListNode[int] | None:
 
-        node_list = []
+        node_list = [None] * (n + 1)
         node = head
-        i = 0 - n
 
-        while node.next:
+        while node:
+            node_list.pop(0)
             node_list.append(node)
             node = node.next
-            i += 1
 
-        l1 = node_list[i - 1]
-        l2 = node_list[i]
-        l1.next = l2.next
+        l1 = node_list[0]
+        l2 = node_list[1]
+
+        if l1 is None:
+            head = l2.next
+        else:
+            l1.next = l2.next
 
         return head
