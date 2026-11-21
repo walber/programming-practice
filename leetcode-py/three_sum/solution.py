@@ -5,37 +5,32 @@ class Solution:
         nums.sort()
         nums_len = len(nums)
         res = []
-
         k = 0
-        lo = 1
-        hi =  nums_len - 1
         
         while k < nums_len:
-            offset = nums[k]
+            prev_k = k
+            lo = k + 1
+            hi = nums_len - 1
 
             while lo < hi and (nums[lo] <= 0 or nums[hi] >= 0):
                 three_sum = nums[k] + nums[lo] + nums[hi]
 
-                if three_sum == 0:
-                    res.append([nums[k], nums[lo], nums[hi]])
-                    prev_lo = nums[lo]
-                    prev_hi = nums[hi]
-
-                    while lo < hi and prev_lo == nums[lo]:
-                        lo += 1
-                        
-                    while lo < hi and prev_hi == nums[hi]:
-                        hi -= 1
-                        
-                elif three_sum > 0:
+                if three_sum > 0:
                     hi -= 1
                 elif three_sum < 0:
                     lo += 1
-            
-            while k < nums_len and offset == nums[k]:
-                k += 1                
-            
-            lo = k + 1
-            hi = nums_len - 1
-        
+                else:
+                    res.append([nums[k], nums[lo], nums[hi]])
+                    prev_lo = lo
+                    prev_hi = hi
+
+                    while lo < hi and nums[lo] == nums[prev_lo]:
+                        lo += 1
+                        
+                    while lo < hi and nums[hi] == nums[prev_hi]:
+                        hi -= 1
+
+            while k < nums_len and nums[k] == nums[prev_k]:
+                k += 1
+
         return res
